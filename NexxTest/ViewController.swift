@@ -7,19 +7,21 @@
 //
 
 import UIKit
+import nexxPlay
 
-class ViewController: UIViewController {
-
+class NPlayerViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let v_player = PlayerView(frame: CGRect(x:0, y:0, width: 300, height: 300))
+        view.addSubview(v_player)
+
+        v_player.overrideAutoPlay(true)
+        
+        v_player.startPlay("0", client: "741", playmode: "single", param: "102510")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
+
 
